@@ -1,10 +1,10 @@
 ﻿// Factorial
-int number = 8;
+int N=9;
 int factorial=1;
-int next = 1;
-while (next<=number)
+int n=1;
+while (n<=N)
 {
-    factorial=factorial*next;
-    next++;
+    factorial=factorial*n;
+    n++;
 }
 Console.WriteLine(factorial);
