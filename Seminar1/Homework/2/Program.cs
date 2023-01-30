@@ -11,6 +11,6 @@ int b = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите 3-е число: ");
 int c = Convert.ToInt32(Console.ReadLine());
 
-if (a>b & a>c) Console.WriteLine($"Максимальное число из {a}, {b}, и {c} является число {a}");
-else if (b>a & b>c) Console.WriteLine($"Максимальное число из {a}, {b}, и {c} является число {b}");
+if (a>=b & a>=c) Console.WriteLine($"Максимальное число из {a}, {b}, и {c} является число {a}");
+else if (b>=a & b>=c) Console.WriteLine($"Максимальное число из {a}, {b}, и {c} является число {b}");
 else Console.WriteLine($"Максимальное число из {a}, {b}, и {c} является число {c}");
