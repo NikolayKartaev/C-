@@ -36,10 +36,9 @@ Console.WriteLine();
 int FindMax (int[] collectionFM)
 {
     int index = 0;
-    int N=collectionFM.Length;
     int max = collectionFM[index];
 
-    while (index<N)
+    while (index<collectionFM.Length)
     {
         if (collectionFM[index]>max)
         {

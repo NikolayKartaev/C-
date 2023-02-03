@@ -19,7 +19,7 @@ void PrintArray (int [] Col)
     }
 }
 
-int[] array = new int [5]; // создать новый массив с 10 элементами
+int[] array = new int [10]; // создать новый массив с 10 элементами
 
 FillArray (array);
 PrintArray (array);
