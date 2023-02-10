@@ -1,22 +1,24 @@
 ﻿Console.Clear();
 
-int N = new Random().Next(1, 50);
+int N = new Random().Next(1, 10);
 int[] array = new int[N];
 
 for (int i = 0; i < array.Length; i++)
 {
     array[i] = new Random().Next(-100, 101);
 }
-Console.WriteLine($"Массив до сдвига: {String.Join(" ", array)}");
+Console.WriteLine($"Последовательность до сдвига: {String.Join(" ", array)}");
 
 int K = new Random().Next(-100000, 100001);
 int sdv = K % array.Length;
 
-if (sdv < 0) Console.WriteLine($" Сдвинуть влево на: {sdv}");
-if (sdv > 0) Console.WriteLine($" Сдвинуть вправо на: {sdv}");
+Console.WriteLine($"Число K, на которое нужно сдвинуть: {K}");
+Console.WriteLine($"Количество чисел последовательности: {array.Length}");
 
-Console.WriteLine($"Число K: {K}");
-Console.WriteLine($"Количество чисел: {array.Length}");
+if (sdv < 0) Console.WriteLine($"Фактически сдвинуть влево на: {sdv}");
+if (sdv > 0) Console.WriteLine($"Фактически сдвинуть вправо на: {sdv}");
+
+int[] array2 = new int[N];
 
 for (int index = 0; index < array.Length; index++)
 {
@@ -24,33 +26,25 @@ for (int index = 0; index < array.Length; index++)
     {
         if (index + sdv < array.Length)
         {
-            int temp = array[index + sdv];
-            array[index + sdv] = array[index];
-            array[array.Length-sdv] = temp;
+            array2[index + sdv] = array[index];
         }
         if (index + sdv >= array.Length)
         {
-            int temp = array[index + sdv - array.Length];
-            array[index + sdv - array.Length] = array[index];
-            array[index + sdv] = temp;
+            array2[sdv - (array.Length - index)] = array[index];
         }
     }
     else if (sdv < 0)
     {
-        if (index - sdv < array.Length)
+        if (index + sdv < 0)
         {
-           int temp = array[index - sdv];
-            array[index - sdv] = array[index];
-            array[array.Length+sdv] = temp;
+            array2[array.Length + sdv + index] = array[index];
         }
-        if (index - sdv >= array.Length)
+        if (index + sdv >= 0 && index + sdv < array.Length)
         {
-            int temp = array[index - sdv];
-            array[index - sdv] = array[index];
-            array[index - sdv + array.Length] = temp;
+            array2[index + sdv] = array[index];
         }
     }
-    else array[index] = array[index];
+    else array2[index] = array[index];
 }
 
-Console.WriteLine($"Массив после сдвига: {String.Join(" ", array)}");
+Console.WriteLine($"Последовательность после сдвига: {String.Join(" ", array2)}");
