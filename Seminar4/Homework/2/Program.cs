@@ -3,7 +3,7 @@
 // 82 -> 10
 // 9012 -> 12
 
-Console.WriteLine("Введите число: ");
+Console.Write("Введите число: ");
 string? number = Console.ReadLine();
 int sum = 0;
 if (number is not null)
@@ -13,5 +13,21 @@ if (number is not null)
         sum = sum + Convert.ToInt32(number[i].ToString());
     }
 }
-
 Console.WriteLine($"Сумма цифр числа {number} равно {sum}");
+
+
+int Num = Convert.ToInt32(number);
+int NumberSum(int N)
+{
+    int res = 0;
+    while (N>0)
+    {
+        res=res + N%10;
+        N=N/10;
+    }
+    return res;
+}
+int result = NumberSum(Num);
+Console.WriteLine($"Сумма цифр числа {number} равно {result}");
+
+
