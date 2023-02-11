@@ -4,10 +4,14 @@ bool IfSimple(int number)
 {
     for (int i = 2; i <= Math.Sqrt(number); i++)
     {
-        if (number % i == 0) return false;
+        if (number % i == 0) 
+        {
+            return false;
+        }
     }
     return true;
 }
+
 bool a = IfSimple(A);
 
 if (a == true) Console.Write($"Число {A} является ПРОСТЫМ");
@@ -25,11 +29,9 @@ while (index < 167)
         if (IfSimple(j) == false) j++;
         else if (IfSimple(j) == true)
         {
-            break;
             array[index] = j;
-            index++; 
         }
-        
+        index++;
     }
 
 }
