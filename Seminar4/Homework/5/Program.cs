@@ -1,38 +1,25 @@
-﻿Console.Clear();
-int A = new Random().Next(4, 999);
-bool IfSimple(int number)
+﻿int n = Convert.ToInt32(Console.ReadLine());
+int countDel = 0, i, j, k, m;
+for (i = 2; i <= n / 2; i++)
 {
-    for (int i = 2; i <= Math.Sqrt(number); i++)
+  countDel = 0;
+  for (j = 2; j <= i / 2; j++)
+  {
+    if (i % j == 0)
+      countDel++;
+  }
+  if (countDel == 0)
+  {
+    m = n - i;
+    for (k = 2; k <= (m + 1) / 2; k++)
     {
-        if (number % i == 0) 
-        {
-            return false;
-        }
+      if (m % k == 0)
+        countDel++;
     }
-    return true;
-}
-
-bool a = IfSimple(A);
-
-if (a == true) Console.Write($"Число {A} является ПРОСТЫМ");
-if (a == false) Console.WriteLine($"Число {A} является составным");
-Console.WriteLine();
-
-bool C = false;
-int[] array = new int[167];
-int j = 0;
-int index = 0;
-while (index < 167)
-{
-    while (j < 998)
+    if (countDel == 0)
     {
-        if (IfSimple(j) == false) j++;
-        else if (IfSimple(j) == true)
-        {
-            array[index] = j;
-        }
-        index++;
+      Console.WriteLine($"{i} {m}");
+      return;
     }
-
+  }
 }
-Console.WriteLine($"Простые числа множества: {String.Join(",", array)}");
