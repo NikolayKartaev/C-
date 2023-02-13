@@ -2,28 +2,36 @@
 // 4; массив [6, 7, 19, 345, 3] -> нет
 // -3; массив [6, 7, 19, 345, 3] -> да
 
-void FillArray(int[] array)
+void ArrayFill(int[] collection)
 {
-  for (int i = 0; i < array.Length; i++)
-    array[i] = new Random().Next(-9, 10); // [-9, 9]
+    for (int index = 0; index < collection.Length; index++)
+    {
+        collection[index] = new Random().Next(-9, 10);
+    }
 }
 
-string ReleaseArray(int[] array, int k)
+string FindNumber (int[] collection, int number)
 {
-  foreach (int element in array)
+  foreach (int element in collection)
   {
-    if (element == k)
-      return "yes";
+    if (element == number) return ($"Number {number} is FOUND");
   }
-  return "no";
+  return "not found";
 }
 
 Console.Clear();
 Console.Write("Введите кол-во элементов: ");
 int n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
 int[] array = new int[n];
-FillArray(array);
-Console.WriteLine($"Начальный массив: [{string.Join(", ", array)}]");
+ArrayFill(array);
+Console.WriteLine($"Массив: [{string.Join(", ", array)}]");
+Console.WriteLine();
+
 Console.Write("Введите число, которое Вы хотите найти: ");
-int k = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine(ReleaseArray(array, k));
+int N = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
+
+
+Console.WriteLine(FindNumber(array, N));
+Console.WriteLine();

@@ -4,29 +4,28 @@
 // [1, 2, 3, 6, 2] -> 0
 // [10, 11, 12, 13, 14] -> 5
 
-void FillArray(int[] array)
+void ArrayFill(int[] collection)
 {
-    for (int i = 0; i < array.Length; i++)
-        array[i] = new Random().Next(-100, 101); // [-9, 9]
+    for (int index = 0; index < collection.Length; index++)
+    {
+        collection[index] = new Random().Next(0, 1001);
+    }
 }
 
-int ReleaseArray(int[] array)
+int FindNumbers(int[] collection)
 {
     int count = 0;
-    foreach (int element in array)
+    foreach (int element in collection)
     {
         if (element >= 10 && element <= 99) count++;
     }
     return count;
 }
 
-    Console.Clear();
-
-    int[] array2 = new int[10];
-    FillArray(array2);
-    
-    Console.WriteLine($"Начальный массив: [{string.Join(", ", array2)}]");
-    Console.WriteLine();
-
-    int A = ReleaseArray(array2);
-    Console.WriteLine(A);
+Console.Clear();
+int[] array = new int[123];
+ArrayFill (array);
+Console.WriteLine($"Массив: [{String.Join(" ", array)}]");
+Console.WriteLine ();
+Console.WriteLine(FindNumbers(array));
+Console.WriteLine ();

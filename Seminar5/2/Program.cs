@@ -1,24 +1,32 @@
 ﻿// Задача 32: Напишите программу замена элементов массива: положительные элементы замените на соответствующие отрицательные, и наоборот.
 // [-4, -8, 8, 2] -> [4, 8, -8, -2] 
 
-void FillArray(int[] array)
+void ArrayFill(int[] collection)
 {
-    for (int i = 0; i < array.Length; i++)
-        array[i] = new Random().Next(-9, 10); // [-9, 9]
+    for (int index = 0; index < collection.Length; index++)
+    {
+        collection[index] = new Random().Next(-9, 10);
+    }
 }
-
-
-void ReleaseArray(int[] array)
+void ChangeMinus(int[] collection)
 {
-    for (int i = 0; i < array.Length; i++)
-        array[i] *= (-1); // array[i] = array[i] * (-1);
+    for (int index = 0; index < collection.Length; index++)
+    {
+        collection[index] *= (-1);
+    }
+
 }
 
 Console.Clear();
+
 Console.Write("Введите кол-во элементов: ");
 int n = Convert.ToInt32(Console.ReadLine());
 int[] array = new int[n];
-FillArray(array);
-Console.WriteLine($"Начальный массив: [{string.Join(", ", array)}]");
-ReleaseArray(array);
-Console.WriteLine($"Конечный массив: [{string.Join(", ", array)}]");
+Console.WriteLine();
+ArrayFill (array);
+Console.WriteLine($"Исходный массив: [{String.Join(", ", array)}]");
+Console.WriteLine();
+
+ChangeMinus (array);
+Console.WriteLine($"Итоговый массив: [{String.Join(", ", array)}]");
+Console.WriteLine();
