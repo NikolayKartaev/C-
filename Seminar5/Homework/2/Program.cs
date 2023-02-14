@@ -13,10 +13,10 @@ Console.WriteLine();
 int[] array = new int[N];
 
 
-for (int index = 0; index < N; index ++)
+for (int index = 0; index < N; index++)
 {
     array[index] = new Random().Next(100, 1000);
-    if (index%2!=0) sum += array[index];
+    if (index % 2 != 0) sum += array[index];
 }
 Console.WriteLine($"Массив: [{string.Join(",", array)}]\n Сумма чисел на нечетных позициях: {sum}");
 
