@@ -28,32 +28,41 @@
 // 29 4 7 12 15 17 24 1	29 7 15 17 1
 // 4 12 24
 // NO
-
-Console.Write("Введите число от 1 до 100: ");
-int N = int.Parse(Console.ReadLine()!);
+Console.Clear();
+int N = new Random().Next(1, 101);
 
 int[] array = new int[N];
-int count3=0, count4=0;
+int count3 = 0, count4 = 0;
 
 for (int index = 0; index < array.Length; index++)
 {
-    array[index]= new Random().Next (1, 32);
-    if (array[index]%2!=0) count3++;
-    if (array[index]%2==0) count4++;
+    array[index] = new Random().Next(1, 32);
+    if (array[index] % 2 != 0) count3++;
+    if (array[index] % 2 == 0) count4++;
 }
-int[] array3 = new int[count3];
-int[] array4 = new int[count4];
 
-Console.WriteLine($"{string.Join(" ", array)}");
+Console.WriteLine($"Исходный массив: [{string.Join(" ", array)}]");
+Console.WriteLine();
 
-int[] array3 = array.Split().Select(x => int.Parse(x)).ToArray();
-int[] array4 = Console.ReadLine()!.Split().Select(x => int.Parse(x)).ToArray();
+string txt = Convert.ToString(array)!;
+string txt2 = string.Empty;
+string txt3 = string.Empty;
 
-    
+for (int index = 0; index < array.Length; index++)
+{
+    if (array[index] % 2 != 0) txt2 = txt2 + array[index].ToString() + " ";
+    if (array[index] % 2 == 0) txt3 = txt3 + array[index].ToString() + " ";
 
-Console.WriteLine($"{string.Join(" ", array3)}");
-Console.WriteLine($"{string.Join(" ", array4)}");
-if (count4>=count3) Console.WriteLine("YES");
-else Console.WriteLine("NO");
+}
+Console.WriteLine($"Число N = {N}");
+Console.WriteLine($"Дни, по которым получены тройки: {txt2}");
+Console.WriteLine($"Дни, по которым получены четверки: {txt3}");
+Console.WriteLine();
 
+Console.WriteLine($"Дни, по которым получены тройки: {string.Join(" ", array.Where(n => n % 2!=0).ToArray())}");
+Console.WriteLine($"Дни, по которым получены четверки: {string.Join(" ", array.Where(n => n %2 == 0).ToArray())}");
+Console.WriteLine();
 
+if (count4 >= count3) Console.WriteLine("YES, Вася может рассчитывать на четверку");
+else Console.WriteLine("NO, Васе не стоит рассчитывать на четверку");
+Console.WriteLine();
