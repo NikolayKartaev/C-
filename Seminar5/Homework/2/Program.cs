@@ -8,7 +8,7 @@
 Console.Clear();
 
 Console.Write("Введите количество элементов массива: ");
-int N = int.Parse(Console.ReadLine()), sum = 0;
+int N = int.Parse(Console.ReadLine()!), sum = 0;
 Console.WriteLine();
 int[] array = new int[N];
 
