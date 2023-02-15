@@ -44,6 +44,7 @@ for (int index = 0; index < array.Length; index++)
 Console.WriteLine($"Исходный массив: [{string.Join(" ", array)}]");
 Console.WriteLine();
 
+// Вариант 1
 string txt = Convert.ToString(array)!;
 string txt2 = string.Empty;
 string txt3 = string.Empty;
@@ -59,6 +60,7 @@ Console.WriteLine($"Дни, по которым получены тройки: {
 Console.WriteLine($"Дни, по которым получены четверки: {txt3}");
 Console.WriteLine();
 
+// Вариант 2
 Console.WriteLine($"Дни, по которым получены тройки: {string.Join(" ", array.Where(n => n % 2!=0).ToArray())}");
 Console.WriteLine($"Дни, по которым получены четверки: {string.Join(" ", array.Where(n => n %2 == 0).ToArray())}");
 Console.WriteLine();
