@@ -4,7 +4,7 @@
 
 Console.Clear();
 
-Console.Write("Введите числа: ");
+Console.Write("Введите числа через пробел: ");
 int[] collection = Console.ReadLine()!.Split().Select(x => int.Parse(x)).ToArray();
 Console.WriteLine();
 
