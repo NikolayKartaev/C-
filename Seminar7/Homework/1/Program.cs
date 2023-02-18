@@ -28,7 +28,7 @@ void PrintMatrix (double [,] anyMatrix)
 }
 
 Console.Write("Введите через пробел количество строк и столбцов матрицы: ");
-int[] size = Console.ReadLine().Split().Select(x => int.Parse(x)).ToArray();
+int[] size = Console.ReadLine()!.Split().Select(x => int.Parse(x)).ToArray();
 double[,] matrix = new double[size[0], size[1]];
 
 FillMatrix(matrix);
