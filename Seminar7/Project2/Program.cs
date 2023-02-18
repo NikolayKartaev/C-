@@ -36,7 +36,7 @@ void PrintOddMatrix(int[,] mtrx)
 }
 Console.Write("Введите через пробел количество строк и столбцов матрицы: ");
 
-int[] size = Console.ReadLine().Split().Select(x => int.Parse(x)).ToArray();
+int[] size = Console.ReadLine()!.Split().Select(x => int.Parse(x)).ToArray();
 
 int[,] matrix = new int[size[0], size[1]];
 
