@@ -18,7 +18,7 @@ void FillMatrix(int[,] anyMatrix)
     {
         for (int j = 0; j < anyMatrix.GetLength(1); j++)
         {
-            anyMatrix[i, j] = i * 3 + j * 5;
+            anyMatrix[i, j] = new Random().Next(1,21);
         }
     }
 }
