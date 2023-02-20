@@ -7,9 +7,9 @@
 
 Console.Write ("Введите пятизначное число: ");
 string? number = Convert.ToString(Console.ReadLine());
-int n = Convert.ToInt32(number);
+int n = Convert.ToInt32(number)!;
 
-while (number.Length!=5 || n < 10000)
+while (number!.Length!=5 || n < 10000)
 {
     Console.WriteLine ("Вы ввели не пятизначное число!\nВведите пятизначное число");
     number = Convert.ToString(Console.ReadLine());
