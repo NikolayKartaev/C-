@@ -14,7 +14,7 @@ void MatrixInput(int[,] mtrx)
     {
         for (int j = 0; j < mtrx.GetLength(1); j++)
         {
-            mtrx[i, j] = new Random().Next(1, 51);
+            mtrx[i, j] = new Random().Next(1,101);
             Console.Write($"{mtrx[i, j]}\t");
         }
         Console.WriteLine();
@@ -26,20 +26,17 @@ void MatrixChangePrint(int[,] mtrx)
 
     for (int i = 0; i < mtrx.GetLength(0); i++)
     {
-        for (int j = i + 1; j < mtrx.GetLength(1) - 1; j++)
+        for (int j = 0; j < mtrx.GetLength(1); j++)
         {
-            int maxRow = i, maxColumn = j;
-            for (int k = j + 1; k < mtrx.GetLength(1); k++)
+            int maxColumn = j;
+            for (int k = j+1 ; k < mtrx.GetLength(1); k++)
             {
-                if (mtrx[i, j] > mtrx[maxRow, maxColumn])
-                {
-                    maxRow = i; 
-                    maxColumn = k;
-                }
+                if (mtrx[i, k] > mtrx[i, maxColumn])
+                maxColumn = k;
             }
             int temp = mtrx[i, j];
-            mtrx[i, j] = mtrx[maxRow, maxColumn];
-            mtrx[maxRow, maxColumn] = temp;
+            mtrx[i, j] = mtrx[i, maxColumn];
+            mtrx[i, maxColumn] = temp;
             Console.Write($"{mtrx[i, j]}\t");
         }
         Console.WriteLine();
