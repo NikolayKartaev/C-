@@ -42,6 +42,7 @@ int FindMinSum(int[,] anyMatrix)
     return minPos;
 }
 
+Console.Clear();
 Console.Write("Введите количество строк и столбцов через пробел: ");
 int[] matrixSize = Console.ReadLine()!.Split().Select(x => int.Parse(x)).ToArray();
 int[,] matrix = new int[matrixSize[0], matrixSize[1]];
