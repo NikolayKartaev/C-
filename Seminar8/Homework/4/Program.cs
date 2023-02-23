@@ -25,9 +25,10 @@ void ThreeDArrayInput(int[,,] threeDArray)
         {
             for (int j = 0; j < threeDArray.GetLength(2); j++)
             {
-                CheckNumber(threeDArray, new Random().Next(10,100));
 
-                Console.Write($"{threeDArray[i, j, k]}({i}, {j}, {k})\t");
+
+
+                    Console.Write($"{threeDArray[i, j, k]}({i}, {j}, {k})\t");
             }
             Console.WriteLine();
         }
@@ -37,6 +38,9 @@ void ThreeDArrayInput(int[,,] threeDArray)
 Console.Clear();
 Console.Write("Введите размер трехмерного массива через пробел: ");
 int[] size = Console.ReadLine()!.Split().Select(x => int.Parse(x)).ToArray();
+
+while (size[0]*size[1]*size[2] > end - start)
+        Console.Write("Массив такого размера");
 int[,,] threeDimensionArray = new int[size[0], size[1], size[2]];
 
 ThreeDArrayInput(threeDimensionArray);
