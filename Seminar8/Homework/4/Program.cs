@@ -6,7 +6,18 @@
 // 27(0,0,1) 90(0,1,1)
 // 26(1,0,1) 55(1,1,1)
 
-void ThreeDArrayInput (int [,,] threeDArray)
+bool CheckNumber(int[] array, int number)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] == number) // если такое число уже есть в массиве, вовзращаем 0
+            return false;
+    }
+    return true; //возвращаем 1, если числа нет в массиве
+}
+
+
+void ThreeDArrayInput(int[,,] threeDArray)
 {
     for (int k = 0; k < threeDArray.GetLength(0); k++)
     {
@@ -14,8 +25,9 @@ void ThreeDArrayInput (int [,,] threeDArray)
         {
             for (int j = 0; j < threeDArray.GetLength(2); j++)
             {
-                threeDArray[i,j,k] = new Random().Next(1,31);
-                Console.Write($"{threeDArray[i,j,k]}({i}, {j}, {k})\t");
+                CheckNumber(threeDArray, new Random().Next(10,100));
+
+                Console.Write($"{threeDArray[i, j, k]}({i}, {j}, {k})\t");
             }
             Console.WriteLine();
         }
@@ -24,7 +36,7 @@ void ThreeDArrayInput (int [,,] threeDArray)
 
 Console.Clear();
 Console.Write("Введите размер трехмерного массива через пробел: ");
-int[]size = Console.ReadLine()!.Split().Select(x=>int.Parse(x)).ToArray();
-int [,,] threeDimensionArray = new int [size[0], size[1], size [2]];
+int[] size = Console.ReadLine()!.Split().Select(x => int.Parse(x)).ToArray();
+int[,,] threeDimensionArray = new int[size[0], size[1], size[2]];
 
-ThreeDArrayInput (threeDimensionArray);
+ThreeDArrayInput(threeDimensionArray);
