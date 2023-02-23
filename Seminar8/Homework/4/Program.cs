@@ -31,7 +31,7 @@ void ThreeDArrayInput(int[,,] threeDArray)
         {
             for (int k = 0; k < threeDArray.GetLength(2); k++)
             {
-                int n = 10;
+                int n = 0;
                 int number = new Random().Next(10, 100);
                 while (n < 90)
                 {
