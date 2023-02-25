@@ -7,40 +7,21 @@ int FindK(int N)
     else return FindK(N - 1) + 2;
 }
 
-
-
-Console.Write("Введите число строк треугольника Паскаля: ");
-int N = int.Parse(Console.ReadLine()!);
-
 void FillMatrix(int[,] mtrx)
 {
-    int k = mtrx.GetLength(1) / 2;
     for (int n = 0; n < mtrx.GetLength(0); n++)
     {
-
-        while (k < FindK(N))
+        mtrx[n, mtrx.GetLength(1) / 2 - n] = 1;
+        mtrx[n, mtrx.GetLength(1) / 2 + n] = 1;
+        int k = mtrx.GetLength(1) / 2 - (n - 2);
+        while (n >= 2 && k <= mtrx.GetLength(1) / 2 + (n - 2) && k < mtrx.GetLength(1))
         {
-            mtrx[n, mtrx.GetLength(1) / 2 - n] = 1;
-            mtrx[n, mtrx.GetLength(1) / 2 + n] = 1;
-
-            int q = 1;
-            while (q <= n && k + 1 < mtrx.GetLength(1) && n - 1 >= 0 && k - 1 >= 0)
-            {
-                mtrx[n, k] = mtrx[n - 1, k - 1] + mtrx[n - 1, k + 1];
-                mtrx[n, k - q] = mtrx[n - 1, k - q - 1] + mtrx[n - 1, k];
-                mtrx[n, k + q] = mtrx[n - 1, k] + mtrx[n - 1, k + q + 1];
-                q++;
-            }
-            k++;
+            mtrx[n, k] = mtrx[n - 1, k - 1] + mtrx[n - 1, k + 1];
+            k = k + 2;
         }
 
     }
 }
-
-int[,] pascalTrianle = new int[N, FindK(N)];
-
-FillMatrix(pascalTrianle);
-
 
 void Print(int[,] matrix)
 {
@@ -57,4 +38,15 @@ void Print(int[,] matrix)
     }
 }
 
+Console.Clear();
+Console.Write("Введите число строк треугольника Паскаля: ");
+int N = int.Parse(Console.ReadLine()!);
+Console.WriteLine();
+
+int[,] pascalTrianle = new int[N, FindK(N)];
+
+FillMatrix(pascalTrianle);
+
 Print(pascalTrianle);
+Console.WriteLine();
+
