@@ -6,9 +6,8 @@ string OutputNumbers(int n)
 {
     if (n == 1)
         return "1";
-    return OutputNumbers(n - 1) + $", {n}";
+    return OutputNumbers(n - 1) + $", {n}"; // выводит текст 1, 2, 3 ... n
 }
-
 
 Console.Clear();
 Console.Write("Введите число: ");
@@ -16,18 +15,11 @@ int n = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine(OutputNumbers(n));
 
 
-
-
-string OutputNumbers(int n)
-{
-    if (n == 1)
-        return "1";
-    return  $"{n}, " + OutputNumbers(n - 1);
-}
-
-Console.Write("Введите число: ");
-int n = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine(OutputNumbers(n));
-
+// string OutputNumbers(int n)
+// {
+//     if (n == 1)
+//         return "1";
+//     return  $"{n}, " + OutputNumbers(n - 1); // выводит текст n ... 3, 2, 1
+// }
 
 
