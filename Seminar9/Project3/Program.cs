@@ -1,6 +1,6 @@
 ﻿int Sum(int N)
 {
-    if (N / 10 == 0) // или так: if (n < 10 || n % 10 == n)
+    if (N % 10 == N) // или так: if (N < 10), или так: (N / 10 == 0)
         return N;
     else return Sum(N / 10) + N % 10;
 }
