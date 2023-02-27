@@ -1,7 +1,7 @@
 ﻿int FindSum(int a, int b)
 {
     if (b == a) return b;
-    else return b + FindSum(a, b - 1);
+    return b + FindSum(a, b - 1);
 }
 
 Console.Write("Введите значение M: ");
