@@ -1,5 +1,7 @@
 ﻿double AckermannFunction(double m, double n)
 {
+    // return m == 0 ? n + 1 : n == 0 ? AckermannFunction(m - 1, 1) : AckermannFunction(m - 1, AckermannFunction(m, n - 1));
+    
     if (m == 0) return n + 1;
     else if (n == 0) return AckermannFunction(m - 1, 1);
     return AckermannFunction(m - 1, AckermannFunction(m, n - 1));
@@ -24,4 +26,4 @@ while (n < 0)
 }
 
 Console.WriteLine();
-Console.Write($"Результат вычисления функции Аккермана равен: {AckermannFunction(m,n)}");
+Console.Write($"Результат вычисления функции Аккермана равен: {AckermannFunction(m, n)}");
