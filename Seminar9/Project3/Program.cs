@@ -1,8 +1,10 @@
-﻿int Sum(int N)
+﻿int Sum(int n)
 {
-    if (N / 10 == 0) // или так: if (n < 10 || n % 10 == n)
-        return N;
-    else return Sum(N / 10) + N % 10;
+    if (n / 10 == 0) // или так: if (n < 10 || n % 10 == n)
+        return n;
+    return Sum(n / 10) + n % 10;
+
+    /*return n / 10 == 0 ? n : Sum(n / 10) + n % 10*/
 }
 
 int N = int.Parse(Console.ReadLine()!);

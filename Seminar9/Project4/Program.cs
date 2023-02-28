@@ -4,9 +4,11 @@
 
 int RaiseInPower(int A, int B)
 {
-    if (B == 0) 
-        return 1 ;
-    else return RaiseInPower(A, B-1) * A;
+    // if (B == 0) 
+    //     return 1 ;
+    // return RaiseInPower(A, B-1) * A;
+
+    return B == 0 ? 1 : RaiseInPower(A, B - 1) * A;
 }
 
 int A = int.Parse(Console.ReadLine()!);
