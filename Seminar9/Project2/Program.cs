@@ -10,11 +10,11 @@ string OutputNumbers(int m, int n)
     return OutputNumbers(m, n - 1) + $", {n}";
 }
 
-string OutputNumbers2(int m, int n)
+string OutputNumbersTwo(int m, int n)
 {
     if (m == n)
         return $"{n}";
-    return $"{m}, " + OutputNumbers2(m+1, n);
+    return $"{m}, " + OutputNumbersTwo(m + 1, n);
 }
 
 Console.Clear();
@@ -25,4 +25,4 @@ Console.Write("Введите 2 число: ");
 int n = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine(OutputNumbers(m, n));
-Console.WriteLine(OutputNumbers2(m, n));
+Console.WriteLine(OutputNumbersTwo(m, n));
