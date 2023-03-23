@@ -1,10 +1,10 @@
 ﻿Console.Clear();
 
 Console.Write("Введите количество элементов массива: ");
-int[] array = new int[int.Parse(Console.ReadLine())];
+int[] array = new int[int.Parse(Console.ReadLine()!)];
 for (int i = 0; i < array.Length; i++)
 {
-    array[i] = int.Parse(Console.ReadLine());
+    array[i] = int.Parse(Console.ReadLine()!);
 }
 
 Console.WriteLine("[" + string.Join(", ", array) + "]");
