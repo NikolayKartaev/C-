@@ -14,9 +14,9 @@ for (int i = 0; i < n; i++)
 Console.WriteLine("Начальный массив: [" + string.Join(", ", collection) + "]");
 Console.WriteLine();
 
-for (int current = 0; current < size - 1; current++)
+for (int current = 0; current < collection.Length - 1; current++)
 {
-    for (int i = 0; i < size - 1; i++)
+    for (int i = 0; i < collection.Length - 1; i++)
     {
         if (collection[i] > collection[i + 1])
         {
@@ -25,5 +25,5 @@ for (int current = 0; current < size - 1; current++)
             collection[i + 1] = temp;
         }
     }
-    Console.WriteLine(i + "[" + string.Join(", ", array) + "]");
+    Console.WriteLine(current + "[" + string.Join(", ", collection) + "]");
 }
